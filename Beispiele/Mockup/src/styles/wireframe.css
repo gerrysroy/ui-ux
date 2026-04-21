@@ -1,0 +1,164 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f1f1f1;
+}
+
+.tablet-shell {
+  width: min(560px, 100%);
+  min-height: 760px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 0;
+}
+
+.camera-dot {
+  display: none;
+}
+
+.wireframe-card {
+  width: min(430px, 100%);
+  border: 2px solid #4a4a4a;
+  background: #fbfbfb;
+}
+
+.row {
+  min-height: 95px;
+  border-bottom: 2px solid #4a4a4a;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row-logo {
+  min-height: 105px;
+}
+
+.brand {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.brand-mark {
+  font-size: clamp(30px, 5vw, 40px);
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: #3d3d3d;
+  font-weight: 500;
+}
+
+.row-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon-box {
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 30px;
+  background: #f4f4f4;
+  border: 1px solid #c8c8c8;
+  cursor: pointer;
+}
+
+.icon-box.active {
+  background: #dce9ff;
+  border-color: #88acf0;
+}
+
+.content-row {
+  border-bottom: 2px solid #4a4a4a;
+  padding: 14px 16px;
+}
+
+.content-row:last-child {
+  border-bottom: none;
+}
+
+.content-row h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid #b4b4b4;
+  background: #f7f7f7;
+  border-radius: 14px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.info-card {
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.info-card strong {
+  font-size: 16px;
+}
+
+.info-card span {
+  font-size: 14px;
+  color: #3f3f3f;
+}
+
+.home-button-wrap {
+  display: none;
+}
+
+.home-button {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 3px solid #cfcfcf;
+  display: grid;
+  place-items: center;
+}
+
+.home-button-inner {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 3px solid #c6c6c6;
+}
