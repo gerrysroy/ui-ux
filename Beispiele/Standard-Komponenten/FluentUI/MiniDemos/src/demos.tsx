@@ -9,6 +9,7 @@ import { DialogsMiniDemo } from "../Dialogs/MiniDemo";
 import { DropDownsMiniDemo } from "../DropDowns/MiniDemo";
 import { FormsMiniDemo } from "../Forms/MiniDemo";
 import { InputsMiniDemo } from "../Inputs/MiniDemo";
+import { KopfFusszeileMiniDemo } from "../Kopf-Fusszeile/MiniDemo";
 import { NavigationMenuMiniDemo } from "../Navigation-Menu/MiniDemo";
 import { SpinnerLoadingMiniDemo } from "../Spinner-Loading/MiniDemo";
 import { TabsMiniDemo } from "../Tabs/MiniDemo";
@@ -28,6 +29,7 @@ export type DemoId =
   | "toast-feedback"
   | "cards"
   | "navigation-menu"
+  | "kopf-fusszeile"
   | "design-styles"
   | "barrierefreiheit"
   | "treeview";
@@ -45,6 +47,7 @@ export const demoMap: Record<DemoId, { title: string; Component: React.Component
   "toast-feedback": { title: "Toast-Feedback", Component: ToastFeedbackMiniDemo },
   cards: { title: "Cards", Component: CardsMiniDemo },
   "navigation-menu": { title: "Navigation-Menu", Component: NavigationMenuMiniDemo },
+  "kopf-fusszeile": { title: "Kopf- und Fusszeile", Component: KopfFusszeileMiniDemo },
   "design-styles": { title: "Design-Styles", Component: DesignStylesMiniDemo },
   barrierefreiheit: { title: "Barrierefreiheit", Component: BarrierefreiheitMiniDemo },
   treeview: { title: "TreeView", Component: TreeViewMiniDemo },

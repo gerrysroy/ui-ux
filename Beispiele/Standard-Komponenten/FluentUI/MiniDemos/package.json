@@ -17,6 +17,7 @@
     "dev:toast-feedback": "vite --mode toast-feedback",
     "dev:cards": "vite --mode cards",
     "dev:navigation-menu": "vite --mode navigation-menu",
+    "dev:kopf-fusszeile": "vite --mode kopf-fusszeile",
     "dev:design-styles": "vite --mode design-styles",
     "dev:barrierefreiheit": "vite --mode barrierefreiheit",
     "dev:treeview": "vite --mode treeview",
