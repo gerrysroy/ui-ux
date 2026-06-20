@@ -1,0 +1,195 @@
+.form {
+  max-width: 780px;
+  padding: 0 0 20px 0;
+}
+
+.rowWide {
+  margin-bottom: 28px;
+  margin-left: 45px;
+}
+
+.rowSplit {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 7px;
+  align-items: flex-start;
+}
+
+.rowTriple {
+  display: flex;
+  gap: 8px;
+  margin: 35px 0 12px 10px;
+  align-items: flex-end;
+}
+
+.rowLocation {
+  display: flex;
+  gap: 120px;
+  margin: 5px 0 40px 80px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroupRight {
+  margin-top: 15px;
+}
+
+.fieldMiddle {
+  margin-left: 30px;
+}
+
+.fieldEmail {
+  margin-top: -10px;
+  margin-left: 50px;
+}
+
+.cityBlock {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+}
+
+.countryBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.statusSection {
+  margin: 0 0 25px 5px;
+  padding: 15px;
+  border: 1px dashed #ddd;
+}
+
+.statusHelp {
+  font-size: 9px;
+  color: #999;
+  margin: 0 0 15px 0;
+  line-height: 2;
+}
+
+.labelAbove {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.labelBelow {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+  display: block;
+}
+
+.labelInline {
+  font-size: 11px;
+  color: #2c3e50;
+}
+
+.labelTiny {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.inputWide {
+  width: 520px;
+}
+
+.inputNarrow {
+  width: 110px;
+}
+
+.inputMedium {
+  width: 200px;
+}
+
+.inputSmall {
+  width: 85px;
+}
+
+.inputLarge {
+  width: 280px;
+}
+
+.inputEmail {
+  width: 190px;
+}
+
+.inputCity {
+  width: 140px;
+}
+
+.dropdown {
+  min-width: 160px;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 10px;
+  display: block;
+  margin-top: 2px;
+}
+
+.errorSmall {
+  color: #c0392b;
+  font-size: 8px;
+}
+
+.errorRed {
+  color: #ff0000;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.globalError {
+  color: #e67e22;
+  font-size: 11px;
+  margin: 10px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 25px;
+  margin-top: 50px;
+  margin-left: 200px;
+  align-items: center;
+}
+
+.btnSubmit {
+  background-color: #9b59b6 !important;
+  min-width: 140px;
+  font-size: 18px;
+}
+
+.btnCancel {
+  font-size: 9px;
+  min-width: 50px;
+}
+
+.btnStore {
+  border: 3px solid #2ecc71 !important;
+  color: #27ae60 !important;
+}
+
+@media (max-width: 1000px) {
+  .rowSplit,
+  .rowTriple,
+  .rowLocation {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .inputWide {
+    width: 100%;
+  }
+
+  .actions {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+}

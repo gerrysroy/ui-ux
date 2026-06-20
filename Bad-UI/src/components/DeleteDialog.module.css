@@ -1,0 +1,43 @@
+.surface {
+  max-width: 420px;
+}
+
+.title {
+  font-size: 22px;
+  color: #95a5a6;
+  font-weight: 300;
+}
+
+.text {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #555;
+  margin: 20px 0 5px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 3px;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  margin-top: 30px;
+}
+
+.btnOk {
+  background-color: #3498db !important;
+  min-width: 90px;
+}
+
+.btnCancel {
+  background-color: #f1c40f !important;
+  color: #333 !important;
+  min-width: 60px;
+  font-size: 10px;
+}
+
+.btnDelete {
+  border: 2px solid #e74c3c !important;
+  color: #e74c3c !important;
+  min-width: 120px;
+  font-size: 16px;
+}

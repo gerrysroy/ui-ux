@@ -1,0 +1,67 @@
+:root {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.card {
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.formGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.actionsRow {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.listControls {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 16px;
+}
+
+.tabsRow {
+  margin-bottom: 12px;
+}
+
+.controlField {
+  min-width: 0;
+}
+
+.emptyState {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.loadingState {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}

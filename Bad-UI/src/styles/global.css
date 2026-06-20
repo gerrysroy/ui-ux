@@ -1,0 +1,11 @@
+/* Intentionally inconsistent global styles for teaching purposes */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  min-width: 900px;
+}

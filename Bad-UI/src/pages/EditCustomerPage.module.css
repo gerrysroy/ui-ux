@@ -1,0 +1,57 @@
+.page {
+  padding-right: 50px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 3px;
+}
+
+.label {
+  font-size: 8px;
+  background: #f39c12;
+  color: white;
+  padding: 2px 6px;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.number {
+  font-size: 24px;
+  color: #27ae60;
+  margin-left: 40px;
+}
+
+.hint {
+  font-size: 10px;
+  color: #666;
+  margin: 0 0 15px 0;
+  max-width: 400px;
+}
+
+.notFound {
+  font-size: 14px;
+  color: #e74c3c;
+}
+
+.extraActions {
+  display: flex;
+  gap: 8px;
+  margin-top: -30px;
+  margin-left: 10px;
+}
+
+.btnBack {
+  background-color: #34495e !important;
+}
+
+.btnApply {
+  background-color: #1abc9c !important;
+  font-size: 11px;
+}

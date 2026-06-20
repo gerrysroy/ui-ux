@@ -1,0 +1,97 @@
+.wrapper {
+  padding: 7px 42px 3px 11px;
+  max-width: 1400px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 47px;
+  padding-top: 22px;
+}
+
+.tinyTitle {
+  font-size: 9px;
+  color: #888;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.navSpacer {
+  width: 80px;
+}
+
+.navBtn {
+  margin-left: 19px;
+  font-size: 11px;
+}
+
+.navBtnGreen {
+  background-color: #2ecc71 !important;
+  border: 3px dashed #1abc9c !important;
+}
+
+.navBtnRed {
+  color: #e74c3c !important;
+  border-color: #e74c3c !important;
+}
+
+.welcomeText {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #666;
+  margin: 0 0 3px 60px;
+  max-width: 95%;
+}
+
+.divider {
+  margin: 31px 0 8px 0;
+}
+
+.main {
+  padding: 0 5px 40px 35px;
+  min-height: 400px;
+}
+
+.footer {
+  border-top: 1px solid #ddd;
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: #aaa;
+}
+
+.footerBold {
+  font-weight: 900;
+  font-size: 14px;
+  color: #3498db;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    padding: 2px 8px;
+    overflow-x: auto;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  .welcomeText {
+    margin-left: 0;
+    font-size: 9px;
+  }
+
+  .main {
+    padding: 0 2px 20px 2px;
+  }
+}

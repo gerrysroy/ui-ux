@@ -1,0 +1,126 @@
+.tableWrapper {
+  overflow-x: auto;
+  margin-top: 3px;
+  margin-left: -15px;
+}
+
+.table {
+  width: 110%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  background: #ecf0f1;
+  padding: 14px 3px 2px 18px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #bdc3c7;
+}
+
+.table td {
+  padding: 6px 11px 6px 2px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.colPhone {
+  width: 180px;
+}
+
+.colCountry {
+  width: 40px;
+  text-align: center;
+}
+
+.colFirst {
+  width: 90px;
+}
+
+.colStatus {
+  width: 55px;
+}
+
+.colCompany {
+  width: 200px;
+}
+
+.colLast {
+  width: 70px;
+}
+
+.colEmail {
+  width: 250px;
+}
+
+.colNumber {
+  width: 30px;
+  font-size: 8px;
+}
+
+.colCity {
+  width: 60px;
+}
+
+.colActions {
+  width: 140px;
+}
+
+.cellLeft {
+  text-align: left;
+  padding-left: 20px !important;
+}
+
+.cellCenter {
+  text-align: center;
+}
+
+.cellRight {
+  text-align: right;
+  font-weight: bold;
+}
+
+.cellCompany {
+  font-size: 11px;
+  color: #7f8c8d;
+}
+
+.cellEmail {
+  font-size: 9px;
+  word-break: break-all;
+}
+
+.cellNumber {
+  font-size: 14px;
+  color: #2980b9;
+}
+
+.cellActions {
+  white-space: nowrap;
+}
+
+.editBtn {
+  font-size: 10px !important;
+  min-width: auto !important;
+  margin-right: 2px;
+}
+
+.deleteBtn {
+  background-color: #e74c3c !important;
+  font-size: 9px !important;
+  min-width: 40px !important;
+  padding: 2px !important;
+}
+
+@media (max-width: 1000px) {
+  .table {
+    font-size: 10px;
+  }
+
+  .table th,
+  .table td {
+    padding: 3px;
+  }
+}
