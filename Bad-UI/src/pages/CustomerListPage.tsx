@@ -6,11 +6,13 @@ import { DeleteDialog } from '../components/DeleteDialog';
 import { useCustomerContext } from '../hooks/CustomerContext';
 import type { Customer } from '../models/Customer';
 import styles from './CustomerListPage.module.css';
+import { useAppToast } from '../hooks/useAppToast';
 
 export function CustomerListPage() {
   const { customers, deleteCustomer } = useCustomerContext();
   const [customerToDelete, setCustomerToDelete] = useState<Customer | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const showToast = useAppToast();
 
   const handleDeleteClick = (customer: Customer) => {
     setCustomerToDelete(customer);
@@ -20,6 +22,7 @@ export function CustomerListPage() {
   const handleConfirmDelete = async () => {
     if (customerToDelete) {
       await deleteCustomer(customerToDelete.id);
+      showToast('Kunde gelöscht', 'success');
     }
     setDialogOpen(false);
     setCustomerToDelete(null);

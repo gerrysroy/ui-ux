@@ -151,12 +151,39 @@
   margin: 10px 0;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #242424;
+}
+
+.error {
+  color: #b10e1c;
+  font-size: 12px;
+}
+
+.globalError {
+  color: #b10e1c;
+  font-size: 13px;
+}
+
 .actions {
   display: flex;
-  gap: 25px;
-  margin-top: 50px;
-  margin-left: 200px;
-  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .btnSubmit {

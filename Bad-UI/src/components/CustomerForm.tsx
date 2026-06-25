@@ -6,6 +6,7 @@ import {
   Option,
   Radio,
   RadioGroup,
+  Spinner,
 } from '@fluentui/react-components';
 import type { CustomerFormData, CustomerStatus } from '../models/Customer';
 import { hasValidationErrors, validateCustomer, type ValidationErrors } from '../utils/validation';
@@ -55,120 +56,103 @@ export function CustomerForm({ initialData, submitLabel, onSubmit, onCancel }: C
 
   return (
     <div className={styles.form}>
-      <div className={styles.rowWide}>
+      <div className={styles.field}>
+        <label className={styles.label}>Firma</label>
         <Input
           value={formData.company}
           onChange={(_e, data) => updateField('company', data.value)}
           placeholder="Firma eingeben..."
-          className={styles.inputWide}
         />
-        <span className={styles.labelBelow}>COMPANY NAME</span>
         {submitted && errors.company && <span className={styles.error}>{errors.company}</span>}
       </div>
 
-      <div className={styles.rowSplit}>
-        <div className={styles.fieldGroup}>
-          <span className={styles.labelAbove}>customer number</span>
-          <Input
-            value={formData.customerNumber}
-            onChange={(_e, data) => updateField('customerNumber', data.value)}
-            className={styles.inputNarrow}
-          />
-          {submitted && errors.customerNumber && <span className={styles.errorSmall}>{errors.customerNumber}</span>}
-        </div>
-
-        <div className={styles.fieldGroupRight}>
-          <Input
-            value={formData.phone}
-            onChange={(_e, data) => updateField('phone', data.value)}
-            placeholder="+49 ..."
-            className={styles.inputMedium}
-          />
-          <span className={styles.labelBelow}>Telefon</span>
-          {submitted && errors.phone && <span className={styles.error}>{errors.phone}</span>}
-        </div>
+      <div className={styles.field}>
+        <label className={styles.label}>Kundennummer</label>
+        <Input
+          value={formData.customerNumber}
+          onChange={(_e, data) => updateField('customerNumber', data.value)}
+        />
+        {submitted && errors.customerNumber && <span className={styles.error}>{errors.customerNumber}</span>}
       </div>
 
-      <div className={styles.rowTriple}>
-        <div>
-          <Input
-            value={formData.lastName}
-            onChange={(_e, data) => updateField('lastName', data.value)}
-            placeholder="Nachname"
-            className={styles.inputSmall}
-          />
-          {submitted && errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
-        </div>
-
-        <div className={styles.fieldMiddle}>
-          <span className={styles.labelInline}>Vorname / First Name</span>
-          <Input
-            value={formData.firstName}
-            onChange={(_e, data) => updateField('firstName', data.value)}
-            className={styles.inputLarge}
-          />
-          {submitted && errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
-        </div>
-
-        <div className={styles.fieldEmail}>
-          <Input
-            value={formData.email}
-            onChange={(_e, data) => updateField('email', data.value)}
-            placeholder="email@example.com"
-            className={styles.inputEmail}
-          />
-          {submitted && errors.email && <span className={styles.errorRed}>{errors.email}</span>}
-        </div>
+      <div className={styles.field}>
+        <label className={styles.label}>Vorname</label>
+        <Input
+          value={formData.firstName}
+          onChange={(_e, data) => updateField('firstName', data.value)}
+        />
+        {submitted && errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
       </div>
 
-      <div className={styles.rowLocation}>
-        <div className={styles.cityBlock}>
-          <span className={styles.labelTiny}>city</span>
-          <Input
-            value={formData.city}
-            onChange={(_e, data) => updateField('city', data.value)}
-            className={styles.inputCity}
-          />
-          {submitted && errors.city && <span className={styles.error}>{errors.city}</span>}
-        </div>
-
-        <div className={styles.countryBlock}>
-          <Dropdown
-            value={formData.country}
-            selectedOptions={formData.country ? [formData.country] : []}
-            onOptionSelect={(_e, data) => updateField('country', data.optionValue ?? '')}
-            className={styles.dropdown}
-          >
-            {countryOptions.map((country) => (
-              <Option key={country} value={country}>
-                {country}
-              </Option>
-            ))}
-          </Dropdown>
-          <span className={styles.labelBelow}>Land</span>
-          {submitted && errors.country && <span className={styles.error}>{errors.country}</span>}
-        </div>
+      <div className={styles.field}>
+        <label className={styles.label}>Nachname</label>
+        <Input
+          value={formData.lastName}
+          onChange={(_e, data) => updateField('lastName', data.value)}
+        />
+        {submitted && errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
       </div>
 
-      <div className={styles.statusSection}>
-        <p className={styles.statusHelp}>
-          Please select whether this customer account should be considered active or inactive
-          in the system. Active customers can receive invoices. Inactive customers are archived.
-        </p>
+      <div className={styles.field}>
+        <label className={styles.label}>E-Mail</label>
+        <Input
+          value={formData.email}
+          onChange={(_e, data) => updateField('email', data.value)}
+          placeholder="email@example.com"
+        />
+        {submitted && errors.email && <span className={styles.error}>{errors.email}</span>}
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>Telefon</label>
+        <Input
+          value={formData.phone}
+          onChange={(_e, data) => updateField('phone', data.value)}
+          placeholder="+41 ..."
+        />
+        {submitted && errors.phone && <span className={styles.error}>{errors.phone}</span>}
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>Ort</label>
+        <Input
+          value={formData.city}
+          onChange={(_e, data) => updateField('city', data.value)}
+        />
+        {submitted && errors.city && <span className={styles.error}>{errors.city}</span>}
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>Land</label>
+        <Dropdown
+          value={formData.country}
+          selectedOptions={formData.country ? [formData.country] : []}
+          onOptionSelect={(_e, data) => updateField('country', data.optionValue ?? '')}
+        >
+          {countryOptions.map((country) => (
+            <Option key={country} value={country}>
+              {country}
+            </Option>
+          ))}
+        </Dropdown>
+        {submitted && errors.country && <span className={styles.error}>{errors.country}</span>}
+      </div>
+
+      <div className={styles.field}>
+        <label className={styles.label}>Status</label>
         <RadioGroup
           value={formData.status}
           onChange={(_e, data) => updateField('status', data.value as CustomerStatus)}
           layout="horizontal"
         >
-          <Radio value="Active" label="Active" />
-          <Radio value="Inactive" label="Inactive" />
+          <Radio value="Active" label="Aktiv" />
+          <Radio value="Inactive" label="Inaktiv" />
         </RadioGroup>
-        <StatusDisplay status={formData.status} variant="form" />
-        <StatusDisplay status={formData.status} variant="inline" />
+        <StatusDisplay status={formData.status} />
       </div>
 
       {submitted && hasValidationErrors(errors) && (
-        <p className={styles.globalError}>Some fields contain errors. Please check your input.</p>
+        <p className={styles.globalError}>Einige Felder enthalten Fehler. Bitte prüfen Sie Ihre Eingaben.</p>
       )}
 
       <div className={styles.actions}>
@@ -177,15 +161,12 @@ export function CustomerForm({ initialData, submitLabel, onSubmit, onCancel }: C
           size="large"
           onClick={handleSubmit}
           disabled={isSaving}
-          className={styles.btnSubmit}
+          icon={isSaving ? <Spinner size="tiny" /> : undefined}
         >
-          {submitLabel}
+          {isSaving ? 'Speichern…' : submitLabel}
         </Button>
-        <Button appearance="secondary" size="small" onClick={onCancel} className={styles.btnCancel}>
-          Cancel
-        </Button>
-        <Button appearance="outline" size="medium" onClick={handleSubmit} disabled={isSaving} className={styles.btnStore}>
-          Store
+        <Button appearance="secondary" size="large" onClick={onCancel} disabled={isSaving}>
+          Abbrechen
         </Button>
       </div>
     </div>

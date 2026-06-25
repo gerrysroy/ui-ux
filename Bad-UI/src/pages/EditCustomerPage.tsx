@@ -3,11 +3,13 @@ import { Button } from '@fluentui/react-components';
 import { CustomerForm } from '../components/CustomerForm';
 import { useCustomerContext } from '../hooks/CustomerContext';
 import styles from './EditCustomerPage.module.css';
+import { useAppToast } from '../hooks/useAppToast';
 
 export function EditCustomerPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { getCustomer, updateCustomer } = useCustomerContext();
+  const showToast = useAppToast();
 
   const customer = id ? getCustomer(id) : undefined;
 
@@ -27,6 +29,7 @@ export function EditCustomerPage() {
   const handleSubmit = async (data: typeof formData) => {
     if (id) {
       await updateCustomer(id, data);
+      showToast('Änderungen gespeichert', 'success');
       navigate('/');
     }
   };

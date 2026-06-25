@@ -4,10 +4,12 @@ import { useCustomerContext } from '../hooks/CustomerContext';
 import { createEmptyCustomer } from '../models/Customer';
 import { customerService } from '../services/customerService';
 import styles from './AddCustomerPage.module.css';
+import { useAppToast } from '../hooks/useAppToast';
 
 export function AddCustomerPage() {
   const navigate = useNavigate();
   const { addCustomer } = useCustomerContext();
+  const showToast = useAppToast();
 
   const initialData = {
     ...createEmptyCustomer(),
@@ -16,6 +18,7 @@ export function AddCustomerPage() {
 
   const handleSubmit = async (data: typeof initialData) => {
     await addCustomer(data);
+    showToast('Kunde erstellt', 'success');
     navigate('/');
   };
 

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Button, Divider } from '@fluentui/react-components';
+import { Button, Divider, Toaster } from '@fluentui/react-components';
 import { CustomerProvider } from '../hooks/CustomerContext';
+import { APP_TOASTER_ID } from '../hooks/useAppToast';
 import styles from './MainLayout.module.css';
 
 interface MainLayoutProps {
@@ -11,6 +12,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   return (
     <CustomerProvider>
       <div className={styles.wrapper}>
+        <Toaster toasterId={APP_TOASTER_ID} />
         <header className={styles.header}>
           <span className={styles.tinyTitle}>app</span>
           <nav className={styles.nav}>

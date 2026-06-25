@@ -8,7 +8,6 @@ import {
   DialogTitle,
 } from '@fluentui/react-components';
 import type { Customer } from '../models/Customer';
-import styles from './DeleteDialog.module.css';
 
 interface DeleteDialogProps {
   customer: Customer | null;
@@ -21,27 +20,27 @@ export function DeleteDialog({ customer, open, onConfirm, onCancel }: DeleteDial
   if (!customer) return null;
 
   return (
-    <Dialog open={open}>
-      <DialogSurface className={styles.surface}>
+    <Dialog
+      open={open}
+      onOpenChange={(_e, data) => {
+        if (!data.open) onCancel();
+      }}
+    >
+      <DialogSurface>
         <DialogBody>
-          <DialogTitle className={styles.title}>???</DialogTitle>
+          <DialogTitle>Kunde löschen?</DialogTitle>
           <DialogContent>
-            <p className={styles.text}>
-              Do you really want to do this? The record for{' '}
-              <strong>{customer.lastName}</strong> might be removed. Or maybe not.
-              Click a button below to continue. This action affects customer number{' '}
-              {customer.customerNumber} located in {customer.city}.
-            </p>
+            Möchten Sie den Kunden{' '}
+            <strong>{customer.firstName} {customer.lastName}</strong>{' '}
+            (Nr. {customer.customerNumber}) wirklich löschen? Diese Aktion kann nicht
+            rückgängig gemacht werden.
           </DialogContent>
-          <DialogActions className={styles.actions}>
-            <Button appearance="primary" onClick={onConfirm} className={styles.btnOk}>
-              OK
+          <DialogActions>
+            <Button appearance="secondary" onClick={onCancel}>
+              Abbrechen
             </Button>
-            <Button appearance="secondary" onClick={onCancel} className={styles.btnCancel}>
-              Cancel
-            </Button>
-            <Button appearance="outline" onClick={onConfirm} className={styles.btnDelete}>
-              Delete
+            <Button appearance="primary" onClick={onConfirm}>
+              Löschen
             </Button>
           </DialogActions>
         </DialogBody>
